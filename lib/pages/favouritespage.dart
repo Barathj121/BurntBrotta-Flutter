@@ -2,54 +2,128 @@ import 'package:burntbrotta/models/favourites.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-
 import '../models/food.dart';
 
-class FavouritesPage extends StatelessWidget {
-  const FavouritesPage({super.key});
+class FavouritesPage extends StatefulWidget {
+  const FavouritesPage({Key? key}) : super(key: key);
 
-  removefavs(Food food, BuildContext context) {
-    final favs = context.read<Favourites>();
-    favs.removefromfavs(food);
+  @override
+  State<FavouritesPage> createState() => _FavouritesPageState();
+}
+
+class _FavouritesPageState extends State<FavouritesPage> {
+  Future<void> refreshFavourites() async {
+    await Future.delayed(const Duration(seconds: 1));
+    setState(() {});
   }
+
+  void removeFromFavs(Food food, BuildContext context) {
+    setState(() {
+      var favs = context.read<Favourites>();
+      favs.removefromfavs(food);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Consumer<Favourites>(builder: (context, value, child) => Scaffold(
-        appBar: AppBar(title: Text("Favourites", style: GoogleFonts.climateCrisis(fontSize: 25, height: 0.9, fontWeight: FontWeight.w100),),
-        ),
-    body: value.favs.isNotEmpty? ListView.builder(itemCount: value.favs.length ,itemBuilder: (context, index){
-      final Food food = value.favs[index];
-      return Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          decoration: BoxDecoration(color: Colors.yellow[300], borderRadius: BorderRadius.circular(15)),
-          height: 120,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                    width: 100,
-                    child: ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(food.imgpath, fit: BoxFit.cover,))),
-                Flexible(child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ListTile(title: Text(food.name, style: GoogleFonts.poppins(fontSize:16, fontWeight: FontWeight.w500),
-                    ), subtitle: Text(food.level, style: GoogleFonts.poppins(fontSize:14),
-                    )))),
-                IconButton(onPressed: removefavs(food, context), icon: Icon(Icons.delete, color: Colors.black,))
-
-              ],
-            ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          "Favourites",
+          style: GoogleFonts.climateCrisis(
+            fontSize: 25,
+            height: 0.9,
+            fontWeight: FontWeight.w100,
           ),
         ),
-      );
+      ),
+      body: Consumer<Favourites>(
+        builder: (context, favs, child) {
+          final favouriteFoods = favs.favs;
 
-    }) : const Center(child: Text("No Favourites Added Yet!")))
+          return RefreshIndicator(
+            onRefresh: refreshFavourites, // Refresh logic
+            child: favouriteFoods.isEmpty
+                ? ListView( // Empty ListView to enable pull-to-refresh
+              children: [
+                Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      "No Favourites Added Yet!",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                ),
+              ],
+            )
+                : ListView.builder(
+              itemCount: favouriteFoods.length,
+              itemBuilder: (context, index) {
+                final food = favouriteFoods[index];
+
+                return Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.yellow[300],
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    height: 120,
+                    child: Row(
+                      children: [
+                        // Food Image
+                        Container(
+                          width: 100,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: AssetImage(food.imgpath),
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        // Food Details
+                        Expanded(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  food.name,
+                                  style: GoogleFonts.poppins(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                                const SizedBox(height: 5),
+                                Text(
+                                  food.level,
+                                  style: GoogleFonts.poppins(fontSize: 14),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        // Delete Button
+                        IconButton(
+                          onPressed: () => removeFromFavs(food, context),
+                          icon: const Icon(
+                            Icons.delete,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          );
+        },
+      ),
     );
   }
-
 }
