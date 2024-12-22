@@ -71,6 +71,7 @@ flutter:
   - lib/images/recipie_imgs/bubble tea.jpg
   - lib/images/recipie_imgs/tofu shakshuka.jpg
   - lib/images/recipie_imgs/Thai red curry.jpg
+  - lib/pages/recipes.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

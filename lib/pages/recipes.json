@@ -1,0 +1,180 @@
+[
+    {
+      "id": 1,
+      "name": "Signature Burnt Parotta",
+      "image": "lib/images/recipie_imgs/brotta.jpg",
+      "description": "Delight in the Flaky Marvel of Homemade Parottas! Experience the Magic of Homemade Parottas: Flaky, Crispy, and Oh-So-Tasty!",
+      "time": "2 hours",
+      "servings": "1 serving",
+      "difficulty": "Intermediate",
+      "ingredients": [
+        "2 cups Maida (All-Purpose Flour)",
+        "¼ cup Milk at room temperature",
+        "1 teaspoon Sugar",
+        "Salt as needed",
+        "Water as needed"
+      ],
+      "instructions": [
+        "In a large plate or mixing bowl, add 2 cups maida, 1 teaspoon sugar, salt as needed. Roughly mix it together and make a well in the center.",
+        "Pour ¼ cup milk (at room temperature) and add water as needed.",
+        "Knead into a soft pliable dough. Add 1 tablespoon oil on top.",
+        "Repeat special kneading technique until dough is soft and smooth.",
+        "Add 2 tablespoons oil on top, cover with a damp kitchen towel, and rest for at least 2 hours."
+      ],
+      "reviews": {
+        "rating": 5,
+        "comments": [
+          "Great recipe! Very tasty.",
+          "A little tricky to make, but worth it."
+        ]
+      },
+      "tags": ["2 hours", "1 serving", "Intermediate"]
+    },
+    {
+      "id": 2,
+      "name": "Indonesian Chicken Noodles",
+      "image": "lib/images/recipie_imgs/noodles.jpg",
+      "description": "A quick and easy chicken noodle recipe with a touch of Indonesia!",
+      "time": "40 mins",
+      "servings": "1 serving",
+      "difficulty": "Easy",
+      "ingredients": [
+        "200g Noodles",
+        "150g Chicken, thinly sliced",
+        "2 tablespoons Soy Sauce",
+        "1 tablespoon Oyster Sauce",
+        "2 teaspoons Sesame Oil"
+      ],
+      "instructions": [
+        "Boil the noodles as per the package instructions and set aside.",
+        "Heat sesame oil in a pan and sauté the chicken until fully cooked.",
+        "Add soy sauce, oyster sauce, and cooked noodles to the pan.",
+        "Stir well until all ingredients are mixed and heated through."
+      ],
+      "reviews": {
+        "rating": 4.5,
+        "comments": [
+          "Quick and delicious!",
+          "Perfect for a weekday dinner."
+        ]
+      },
+      "tags": ["40 mins", "1 serving", "Easy"]
+    },
+    {
+      "id": 3,
+      "name": "Chocolate Raspberry Mousse",
+      "image": "lib/images/recipie_imgs/chocolate mousse.jpg",
+      "description": "A rich and creamy chocolate mousse with a hint of raspberry.",
+      "time": "20 mins",
+      "servings": "1 serving",
+      "difficulty": "Easy",
+      "ingredients": [
+        "100g Dark Chocolate",
+        "50ml Heavy Cream",
+        "1 tablespoon Raspberry Jam"
+      ],
+      "instructions": [
+        "Melt dark chocolate in a double boiler or microwave.",
+        "Whip the heavy cream until soft peaks form.",
+        "Fold the melted chocolate and raspberry jam into the whipped cream.",
+        "Chill for 10 minutes and serve."
+      ],
+      "reviews": {
+        "rating": 4.8,
+        "comments": [
+          "Rich and satisfying!",
+          "A dessert worth trying."
+        ]
+      },
+      "tags": ["20 mins", "1 serving", "Easy"]
+    },
+    {
+      "id": 4,
+      "name": "Oven Baked Tofu Shakshuka",
+      "image": "lib/images/recipie_imgs/tofu shakshuka.jpg",
+      "description": "A healthy twist on the classic shakshuka, with tofu!",
+      "time": "40 mins",
+      "servings": "1 serving",
+      "difficulty": "Intermediate",
+      "ingredients": [
+        "200g Tofu",
+        "1 Onion, chopped",
+        "2 Bell Peppers, diced",
+        "3 Tomatoes, chopped",
+        "1 teaspoon Paprika"
+      ],
+      "instructions": [
+        "Preheat the oven to 180°C (350°F).",
+        "Sauté onion and bell peppers until softened.",
+        "Add tomatoes and paprika, simmer for 10 minutes.",
+        "Pour the mixture into an oven-safe dish, add tofu slices on top, and bake for 20 minutes."
+      ],
+      "reviews": {
+        "rating": 4.3,
+        "comments": [
+          "Healthy and tasty!",
+          "Great for a quick dinner."
+        ]
+      },
+      "tags": ["40 mins", "1 serving", "Intermediate"]
+    },
+    {
+      "id": 5,
+      "name": "Bubble Tea",
+      "image": "lib/images/recipie_imgs/bubble tea.jpg",
+      "description": "A fun and refreshing drink that's easy to make at home.",
+      "time": "15 mins",
+      "servings": "1 serving",
+      "difficulty": "Easy",
+      "ingredients": [
+        "1 cup Tapioca Pearls",
+        "1 cup Milk",
+        "1 tablespoon Sugar",
+        "1 Tea Bag"
+      ],
+      "instructions": [
+        "Cook the tapioca pearls as per the package instructions.",
+        "Brew the tea bag in hot water for 5 minutes.",
+        "Combine tea, milk, and sugar. Add tapioca pearls and serve."
+      ],
+      "reviews": {
+        "rating": 4.7,
+        "comments": [
+          "Perfect for bubble tea lovers!",
+          "Easy and fun to make."
+        ]
+      },
+      "tags": ["15 mins", "1 serving", "Easy"]
+    },
+    {
+      "id": 6,
+      "name": "Thai Red Curry",
+      "image": "lib/images/recipie_imgs/Thai red curry.jpg",
+      "description": "A creamy and spicy Thai curry that's full of flavor.",
+      "time": "40 mins",
+      "servings": "1 serving",
+      "difficulty": "Intermediate",
+      "ingredients": [
+        "200ml Coconut Milk",
+        "2 tablespoons Thai Red Curry Paste",
+        "100g Chicken or Tofu",
+        "1 cup Vegetables (carrots, beans, etc.)",
+        "1 teaspoon Fish Sauce"
+      ],
+      "instructions": [
+        "Heat curry paste in a pan until fragrant.",
+        "Add coconut milk and simmer for 5 minutes.",
+        "Add chicken or tofu, and cook for 10 minutes.",
+        "Add vegetables and fish sauce, cook for another 10 minutes, and serve."
+      ],
+      "reviews": {
+        "rating": 4.6,
+        "comments": [
+          "Authentic taste!",
+          "Perfect balance of spice and creaminess."
+        ]
+      },
+      "tags": ["40 mins", "1 serving", "Intermediate"]
+    }
+  ]
+  
