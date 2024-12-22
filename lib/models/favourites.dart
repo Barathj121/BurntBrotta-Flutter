@@ -15,11 +15,11 @@ class Favourites extends ChangeNotifier{
     notifyListeners();
   }
 
-  void removefromfavs(Food food){
-    if (!_favs.contains(food)) {
+  void removefromfavs(Food food) {
+    if (_favs.contains(food)) {
       _favs.remove(food);
+      notifyListeners();
     }
-    notifyListeners();
   }
 
 }
